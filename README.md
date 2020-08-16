@@ -13,7 +13,7 @@
 
 ## How to install
     
-    git clone 
+    git clone https://github.com/pongpong-labs/Eyear-nlp.git
 
 ## Quick Start
 
@@ -188,7 +188,40 @@
     f.close()
 
 
-참조
+## Training Word2Vec
+    from eunjeon import Mecab
+    tagger = Mecab()
+    
+    f= open(r'학습할 데이터',encoding="utf-8")
+
+    text=[]
+    while True:
+        line=f.readline()
+        if tagger.nouns(line)!=[]:
+            text.append(tagger.nouns(line))
+        if not line:
+            break
+    f.close()
+    
+    from gensim.models import Word2Vec
+    model = Word2Vec(text,size=500,window=7,min_count=5,workers=6,sg=1)
+    
+    model.save('psychology.model')
+    
+## 정답 단어 정의 (여기에 포함되지 않는 단어를 오류 단어 취급)
+    
+    text_list=sum(text,[])
+    text_list=set(text_list)
+    text_list=list(text_list)
+    
+    f=open(r'C:\Users\IBK\Desktop\please.txt','w',encoding='utf-8')
+    for i in text_list:
+        f.write(i+'\n')
+    f.close()
+
+
+## 참조
 1. https://github.com/koshort/pyeunjeon 
 2. https://github.com/jamesturk/jellyfish
 3. https://pypi.org/project/mykoreanromanizer/
+4. https://github.com/haven-jeon/PyKoSpacing.git
