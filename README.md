@@ -192,7 +192,7 @@
     from eunjeon import Mecab
     tagger = Mecab()
     
-    f= open(r'학습할 데이터',encoding="utf-8")
+    f= open(r'학습할 데이터.txt',encoding="utf-8")
 
     text=[]
     while True:
@@ -214,7 +214,7 @@
     text_list=set(text_list)
     text_list=list(text_list)
     
-    f=open(r'C:\Users\IBK\Desktop\please.txt','w',encoding='utf-8')
+    f=open(r'파일위치\파일이름.txt','w',encoding='utf-8')
     for i in text_list:
         f.write(i+'\n')
     f.close()
