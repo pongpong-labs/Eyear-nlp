@@ -70,7 +70,7 @@ py==1.9.0
 pyasn1==0.4.8
 pyasn1-modules==0.2.8
 pycparser==2.20
-Pygments==2.6.1
+Pygments==2.7.4
 pykospacing @ git+https://github.com/haven-jeon/PyKoSpacing.git@f03c3842892682156a90a749b04607bef7c27fea
 pyparsing==2.4.7
 pyrsistent==0.16.0
